@@ -99,9 +99,8 @@ torch.save({
             'optimizer': optimizer.state_dict(),
             'scheduler': scheduler.state_dict(),
             }, "ResNet50")
-
+ 
 # plot the loss 
-# plotting the loss 
 plt.xlabel("Epoch")
 plt.ylabel("Loss")
 plt.plot([epoch+1 for epoch in range(num_epochs)], train_loss, 'r', label="Training Loss")

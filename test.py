@@ -21,8 +21,6 @@ def cal_accuracy(loader, model, device):
             labels = labels.type(torch.long)
             pred = model(data)
             _, predictions = pred.max(1)
-            print(f"model prediction: {predictions[0]}")
-            print(f"groud truth: {true[0]}")
             correct += (predictions==true).sum()
             num_samples += predictions.size(0)
     print(f"Validation accuracy: {correct/num_samples:>0.3f}")
@@ -59,7 +57,6 @@ print(f"groud truth: {batch[1][0]}")
 plt.show()
 
 # for evaluating model accuracy 
-"""
+
 model.to(device)
 cal_accuracy(validation_loader, model, device)
-"""
